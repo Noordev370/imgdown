@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "ImgDown",
+  "version": "1.0",
+  "description": "Downloads images in the page",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/main/beastify",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "64": "icons/icon64.png"
+  },
+  "permissions": [
+    "activeTab","downloads"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "imageDownload",
+    "default_popup": "popup/popup.html"
+  }
+}
