@@ -1,10 +1,22 @@
 function clickHandler() {
-  broswser.tabs.executeScript({ file: "/content_scripts/main.js" });
-  console.log("download btn click");
+  browser.tabs.executeScript({ file: "/content_scripts/main.js" });
 }
 
+function download(url) {
+  browser.downloads.download({ url: url });
+  console.log("download called");
+}
+
+function downloadAll(URLs) {
+  URLs.forEach((url) => {
+    download(url);
+    console.log("inside download all foreach");
+  });
+}
 
 const btn = document.querySelector("button");
-btn.addEventListener("click",clickHandler);
+btn.addEventListener("click", clickHandler);
 
-document.addEventListener("click",()=>{console.log("clicked")});
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  downloadAll(message.urls);
+});

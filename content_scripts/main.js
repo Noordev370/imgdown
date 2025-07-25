@@ -1,6 +1,5 @@
 function getimgElements() {
   const elements = document.querySelectorAll("img");
-  console.log(elements);
   return elements;
 }
 
@@ -8,17 +7,12 @@ function getimgURLs() {
   let URLs = [];
   const elements = getimgElements();
   elements.forEach((element) => {
-    URLs.push(element);
-  })
+    URLs.push(element.src);
+  });
   console.log(URLs);
   return URLs;
 }
 
-function download(url) {
-  browser.downloads.download({ url: url });
-}
-
-function downloadAll() { }
-
 getimgElements();
-getimgURLs();
+const URLs = getimgURLs();
+browser.runtime.sendMessage({ urls: URLs });

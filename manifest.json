@@ -9,9 +9,7 @@
     "32": "icons/icon32.png",
     "64": "icons/icon64.png"
   },
-  "permissions": [
-    "activeTab","downloads"
-  ],
+  "permissions": ["activeTab", "downloads", "tabs"],
   "browser_action": {
     "default_icon": "icons/icon32.png",
     "default_title": "imageDownload",
