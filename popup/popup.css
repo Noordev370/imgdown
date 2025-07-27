@@ -1,7 +1,19 @@
 body {
-  width: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: #e00000;
+  background-color: white;
 }
 
 button {
-  width: 100%;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  border-radius: 10px;
+  color: white;
+  background-color: #e00000;
+  font-size: 1.2em;
+  font-weight: bold;
 }
