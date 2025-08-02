@@ -4,13 +4,11 @@ function clickHandler() {
 
 function download(url) {
   browser.downloads.download({ url: url });
-  console.log("download called");
 }
 
 function downloadAll(URLs) {
   URLs.forEach((url) => {
     download(url);
-    console.log("inside download all foreach");
   });
 }
 
