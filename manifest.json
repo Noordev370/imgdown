@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "ImgDown",
   "version": "1.0",
   "description": "Downloads images in the page",
@@ -9,8 +9,8 @@
     "32": "icons/icon32.png",
     "64": "icons/icon64.png"
   },
-  "permissions": ["activeTab", "downloads", "tabs"],
-  "browser_action": {
+  "permissions": ["activeTab", "downloads", "tabs", "scripting"],
+  "action": {
     "default_icon": "icons/icon32.png",
     "default_title": "imageDownload",
     "default_popup": "popup/popup.html"

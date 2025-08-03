@@ -1,5 +1,13 @@
-function clickHandler() {
-  browser.tabs.executeScript({ file: "/content_scripts/main.js" });
+async function clickHandler() {
+  const tabsList = await browser.tabs.query({
+    active: true,
+    currentWindow: true,
+  });
+  const currentTab = tabsList[0];
+  browser.scripting.executeScript({
+    target: { tabId: currentTab.id },
+    files: ["/content_scripts/main.js"],
+  });
 }
 
 function download(url) {
